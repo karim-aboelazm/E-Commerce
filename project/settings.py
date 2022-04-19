@@ -12,7 +12,7 @@ DEBUG = True
 TEST = os.getenv("FAIL_INVALID_TEMPLATE_VARS")
 
 
-ALLOWED_HOSTS = ['','127.0.0.1']
+ALLOWED_HOSTS = ['https://doret-elfaleh.herokuapp.com/','127.0.0.1']
 
 
 INSTALLED_APPS = [
