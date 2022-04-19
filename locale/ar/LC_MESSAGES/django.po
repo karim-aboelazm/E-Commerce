@@ -1,0 +1,603 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-19 19:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\ecommerce\templates\Admins\add_new_category.html:5
+#: .\ecommerce\templates\Admins\add_new_category.html:10
+#: .\ecommerce\templates\Admins\admin_category_list.html:10
+msgid "Add New Category"
+msgstr "اضافة قسم جديد"
+
+#: .\ecommerce\templates\Admins\add_new_category.html:14
+#: .\ecommerce\templates\Admins\edit_product.html:14
+msgid "Add"
+msgstr "اضافة"
+
+#: .\ecommerce\templates\Admins\add_new_product.html:5
+#: .\ecommerce\templates\Admins\add_new_product.html:10
+#: .\ecommerce\templates\Admins\admin_product_list.html:10
+msgid "Add New Product"
+msgstr "اضافة منتج جديد"
+
+#: .\ecommerce\templates\Admins\add_new_product.html:14
+#: .\ecommerce\templates\customer\edit_profile.html:16
+#: .\ecommerce\templates\customer\reset_password.html:16
+msgid "Save"
+msgstr "احفظ"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:5
+#: .\ecommerce\templates\Admins\admin_all_order.html:11
+#: .\ecommerce\templates\Admins\adminbase.html:109
+msgid "All Orders"
+msgstr "جميع الطلبات"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:15
+#: .\ecommerce\templates\Admins\admin_category_list.html:14
+#: .\ecommerce\templates\Admins\admin_home.html:14
+#: .\ecommerce\templates\Admins\admin_order_detail.html:23
+#: .\ecommerce\templates\Admins\admin_product_list.html:14
+#: .\ecommerce\templates\cart\check_out.html:14
+#: .\ecommerce\templates\cart\mycart.html:16
+#: .\ecommerce\templates\customer\order_detail.html:20
+#: .\ecommerce\templates\customer\profile.html:65
+msgid "SN"
+msgstr "فهرس"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:16
+#: .\ecommerce\templates\Admins\admin_home.html:15
+msgid "Ordered ID"
+msgstr "رقم الطلب"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:17
+#: .\ecommerce\templates\Admins\admin_home.html:16
+#: .\ecommerce\templates\customer\profile.html:20
+msgid "Customer"
+msgstr "عميل"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:18
+#: .\ecommerce\templates\Admins\admin_home.html:17
+#: .\ecommerce\templates\customer\profile.html:68
+msgid "Ordered On"
+msgstr "ميعاد الطلب"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:19
+#: .\ecommerce\templates\Admins\admin_home.html:18
+msgid "Amount"
+msgstr "التكلفة"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:20
+#: .\ecommerce\templates\customer\profile.html:69
+msgid "Status"
+msgstr "الحالة"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:27
+#: .\ecommerce\templates\Admins\admin_home.html:25
+#: .\ecommerce\templates\customer\order_detail.html:10
+#: .\ecommerce\templates\customer\profile.html:76
+msgid "ORDER"
+msgstr "طلب"
+
+#: .\ecommerce\templates\Admins\admin_all_order.html:29
+#: .\ecommerce\templates\Admins\admin_home.html:27
+#: .\ecommerce\templates\customer\order_detail.html:12
+#: .\ecommerce\templates\customer\profile.html:78
+msgid "ago"
+msgstr "منذ"
+
+#: .\ecommerce\templates\Admins\admin_category_list.html:4
+#: .\ecommerce\templates\products\categories.html:3
+#: .\ecommerce\templates\products\categories.html:10
+#: .\templates\footer.html:64
+msgid "All Categories"
+msgstr "جميع الاقسام"
+
+#: .\ecommerce\templates\Admins\admin_category_list.html:9
+msgid "All Categories List"
+msgstr "قائمة الاقسام"
+
+#: .\ecommerce\templates\Admins\admin_category_list.html:15
+msgid "Category Title"
+msgstr "عنوان القسم"
+
+#: .\ecommerce\templates\Admins\admin_category_list.html:16
+msgid "Number of products"
+msgstr "عدد المنتجات"
+
+#: .\ecommerce\templates\Admins\admin_home.html:4
+msgid "Admin Home"
+msgstr "صفحة المسؤل عن الموقع"
+
+#: .\ecommerce\templates\Admins\admin_home.html:10
+msgid "Pending Orders"
+msgstr "الطلبات"
+
+#: .\ecommerce\templates\Admins\admin_login.html:11
+#: .\ecommerce\templates\customer\login.html:10
+msgid "Please login to see this page."
+msgstr "من فضلك قم بتسجيل الدخول لتتصفح هذه الصفحة"
+
+#: .\ecommerce\templates\Admins\admin_login.html:33
+#: .\ecommerce\templates\customer\login.html:32
+#: .\ecommerce\templates\customer\signup.html:24
+msgid "Doret Elfaleh Market"
+msgstr "سوق درة الفالح"
+
+#: .\ecommerce\templates\Admins\admin_login.html:36
+msgid "Admin Login"
+msgstr "تسجيل دخول المسؤل"
+
+#: .\ecommerce\templates\Admins\admin_login.html:40
+#: .\ecommerce\templates\customer\login.html:39
+msgid "Your username and password didn't match. Please try again."
+msgstr "اسم المستخدم وكلمة السر غير متطابقتين من فضلك حاول مرة اخري"
+
+#: .\ecommerce\templates\Admins\admin_login.html:43
+msgid "Login As Admin"
+msgstr "تسجيل الدخول كمسؤل"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:5
+msgid "Order Details"
+msgstr "تفاصيل الطلبات"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:11
+#: .\ecommerce\templates\customer\order_detail.html:9
+msgid "Order Detail"
+msgstr "تفاصيل الطلب"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:12
+#: .\ecommerce\templates\customer\order_detail.html:10
+#: .\ecommerce\templates\customer\profile.html:66
+msgid "Order ID"
+msgstr "رقم الطلب"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:13
+#: .\ecommerce\templates\customer\order_detail.html:11
+msgid "Order Status"
+msgstr "حالة الطلب"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:14
+#: .\ecommerce\templates\customer\order_detail.html:12
+msgid "Order On"
+msgstr "الطلب في"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:15
+#: .\ecommerce\templates\customer\order_detail.html:13
+msgid "Customer Info"
+msgstr "بيانات العميل"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:16
+#: .\ecommerce\templates\customer\order_detail.html:14
+msgid "Shipping Address"
+msgstr "عنوان المتسوق"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:17
+msgid "Payment Information"
+msgstr "بيانات الدفع"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:24
+#: .\ecommerce\templates\customer\order_detail.html:21
+msgid "Items"
+msgstr "المنتجات"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:25
+#: .\ecommerce\templates\Admins\admin_product_list.html:17
+#: .\ecommerce\templates\cart\check_out.html:16
+#: .\ecommerce\templates\cart\mycart.html:18
+#: .\ecommerce\templates\customer\order_detail.html:22
+#: .\ecommerce\templates\customer\profile.html:67
+msgid "Price"
+msgstr "السعر"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:26
+#: .\ecommerce\templates\cart\check_out.html:17
+#: .\ecommerce\templates\cart\mycart.html:19
+#: .\ecommerce\templates\customer\order_detail.html:23
+msgid "Quantity"
+msgstr "الكمية"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:27
+#: .\ecommerce\templates\cart\check_out.html:18
+#: .\ecommerce\templates\cart\mycart.html:20
+#: .\ecommerce\templates\customer\order_detail.html:24
+msgid "Subtotal"
+msgstr "السعر الجزئي"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:41
+#: .\ecommerce\templates\cart\check_out.html:32
+#: .\ecommerce\templates\cart\mycart.html:40
+msgid "Total"
+msgstr "السعر الكلي"
+
+#: .\ecommerce\templates\Admins\admin_order_detail.html:55
+msgid "Change"
+msgstr "تغيير"
+
+#: .\ecommerce\templates\Admins\admin_product_list.html:4
+#: .\ecommerce\templates\Admins\adminbase.html:113
+#: .\ecommerce\templates\products\allproducts.html:3
+msgid "All Products"
+msgstr "جميع المنتجات"
+
+#: .\ecommerce\templates\Admins\admin_product_list.html:9
+msgid "All Products List"
+msgstr "قائمة جميع المنتجات"
+
+#: .\ecommerce\templates\Admins\admin_product_list.html:15
+msgid "Product Title"
+msgstr "المنتجات"
+
+#: .\ecommerce\templates\Admins\admin_product_list.html:16
+msgid "Image"
+msgstr "الصورة"
+
+#: .\ecommerce\templates\Admins\admin_product_list.html:18
+msgid "Edit Product"
+msgstr "تعديل المنتج"
+
+#: .\ecommerce\templates\Admins\admin_product_list.html:19
+msgid "Delete Product"
+msgstr " مسح المنتج"
+
+#: .\ecommerce\templates\Admins\adminbase.html:73
+msgid "Login as Admin"
+msgstr "تسجيل الدخول كمسؤل"
+
+#: .\ecommerce\templates\Admins\adminbase.html:92 .\templates\footer.html:12
+#: .\templates\footer.html:104 .\templates\nav_system.html:112
+msgid "Doret Elfaleh"
+msgstr "درة الفالح"
+
+#: .\ecommerce\templates\Admins\adminbase.html:103
+#: .\ecommerce\templates\home_pages\home.html:5 .\templates\footer.html:47
+#: .\templates\nav_system.html:128
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\ecommerce\templates\Admins\adminbase.html:106
+msgid "Visit Site"
+msgstr "زيارة الموقع"
+
+#: .\ecommerce\templates\Admins\adminbase.html:117
+msgid "All categories"
+msgstr "جميع الاقسام"
+
+#: .\ecommerce\templates\Admins\edit_product.html:5
+#: .\ecommerce\templates\Admins\edit_product.html:10
+msgid "Update Product"
+msgstr "تعديل المنتج"
+
+#: .\ecommerce\templates\cart\add_to_cart.html:3
+#: .\ecommerce\templates\home_pages\home.html:114
+#: .\ecommerce\templates\products\allproducts.html:19
+#: .\ecommerce\templates\products\categories.html:26
+#: .\ecommerce\templates\products\productdetail.html:30
+#: .\ecommerce\templates\products\search.html:29
+msgid "Add To Cart"
+msgstr "اضافة الي الحقيبة"
+
+#: .\ecommerce\templates\cart\add_to_cart.html:6
+msgid "Congratulations !"
+msgstr "تهانيئا"
+
+#: .\ecommerce\templates\cart\add_to_cart.html:7
+msgid "Product is added to the cart successfully !"
+msgstr "تم اضافة المنتج في الحقيبة"
+
+#: .\ecommerce\templates\cart\add_to_cart.html:10
+msgid "Check Your Cart"
+msgstr "افحص الحقيبة الخاصة بكم"
+
+#: .\ecommerce\templates\cart\check_out.html:4
+#: .\ecommerce\templates\cart\mycart.html:48
+msgid "Check Out"
+msgstr "ادفع"
+
+#: .\ecommerce\templates\cart\check_out.html:7
+#: .\ecommerce\templates\cart\mycart.html:12
+msgid "Items in my cart"
+msgstr "مكونات الحقيبة"
+
+#: .\ecommerce\templates\cart\check_out.html:8
+msgid "Update Cart"
+msgstr "تحديث الحقيبة"
+
+#: .\ecommerce\templates\cart\check_out.html:15
+#: .\ecommerce\templates\cart\mycart.html:17
+msgid "Product"
+msgstr "المنتجات"
+
+#: .\ecommerce\templates\cart\mycart.html:5
+msgid "My Cart"
+msgstr "حقيباتي"
+
+#: .\ecommerce\templates\cart\mycart.html:21
+msgid "Action"
+msgstr "الفعل"
+
+#: .\ecommerce\templates\cart\mycart.html:43
+msgid "Empty Cart"
+msgstr "افرغ الحقيبة"
+
+#: .\ecommerce\templates\customer\edit_profile.html:6
+#: .\ecommerce\templates\customer\edit_profile.html:11
+msgid "Edit Profile"
+msgstr "تعديل البروفايل"
+
+#: .\ecommerce\templates\customer\forgot_password.html:5
+msgid "Forgot Password"
+msgstr "نسيت كلمة السر"
+
+#: .\ecommerce\templates\customer\forgot_password.html:12
+msgid ""
+"Password reset link is sent to your email check your inbox immediately .."
+msgstr "رابط استعادة كلمة السر قد تم ارسالة الي الرسائل"
+
+#: .\ecommerce\templates\customer\forgot_password.html:15
+msgid "Someting went wrong please enter your email again"
+msgstr "حدث خطأ من فضلك ادخل بريدك الالكتروني مرة اخري"
+
+#: .\ecommerce\templates\customer\forgot_password.html:22
+msgid "Get Reset Link"
+msgstr "احصل علي رابط الاستعادة"
+
+#: .\ecommerce\templates\customer\login.html:35
+msgid "Sign into your account"
+msgstr "سجل الدخول الي حسابك"
+
+#: .\ecommerce\templates\customer\login.html:42
+#: .\ecommerce\templates\customer\signup.html:29
+#: .\templates\nav_system.html:87
+msgid "Login"
+msgstr "تسجيل دخول"
+
+#: .\ecommerce\templates\customer\login.html:46
+msgid "Forgot Password ?  "
+msgstr "هل نسيت كلمة السر ؟"
+
+#: .\ecommerce\templates\customer\login.html:46
+msgid "Reset Now"
+msgstr "استعيد الان"
+
+#: .\ecommerce\templates\customer\login.html:47
+msgid "Don't have an account?"
+msgstr "لم امتلك حساب"
+
+#: .\ecommerce\templates\customer\login.html:47
+msgid "Register here"
+msgstr "مستخدم جديد"
+
+#: .\ecommerce\templates\customer\login.html:48
+msgid "Terms of use."
+msgstr "شروط الاستخدام"
+
+#: .\ecommerce\templates\customer\login.html:49
+msgid "Privacy policy"
+msgstr "سياسة الخصوصية"
+
+#: .\ecommerce\templates\customer\order_detail.html:4
+msgid "Customer Order Detail"
+msgstr "تفاصيل طلب العميل"
+
+#: .\ecommerce\templates\customer\order_detail.html:16
+msgid "Order Items"
+msgstr "اجزاء الطلب"
+
+#: .\ecommerce\templates\customer\order_detail.html:38
+msgid "Total :"
+msgstr "السعر الكلي"
+
+#: .\ecommerce\templates\customer\profile.html:5
+msgid "Profile"
+msgstr "البروفايل"
+
+#: .\ecommerce\templates\customer\profile.html:37
+msgid "Personal Info"
+msgstr "البيانات الشخصية"
+
+#: .\ecommerce\templates\customer\profile.html:42
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#: .\ecommerce\templates\customer\profile.html:43
+msgid "Email"
+msgstr "البريد"
+
+#: .\ecommerce\templates\customer\profile.html:44
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#: .\ecommerce\templates\customer\profile.html:45
+msgid "Address"
+msgstr "العنوان"
+
+#: .\ecommerce\templates\customer\profile.html:47
+#: .\ecommerce\templates\customer\profile.html:49
+msgid "Joined On"
+msgstr "انضم في"
+
+#: .\ecommerce\templates\customer\profile.html:57
+msgid "Shopping Info"
+msgstr "بيانات التسوق"
+
+#: .\ecommerce\templates\customer\profile.html:96
+msgid "Welcome, new user. Please log in."
+msgstr "مرحبا و مستخدم جديد من فضلك قم بتسجيل الدخول"
+
+#: .\ecommerce\templates\customer\reset_password.html:5
+msgid "Reset Password "
+msgstr "استعادة كلمة السر"
+
+#: .\ecommerce\templates\customer\reset_password.html:12
+msgid "New Password"
+msgstr "كلمة سر جديدة"
+
+#: .\ecommerce\templates\customer\signup.html:28
+msgid "Sign up"
+msgstr "تسجيل دخول"
+
+#: .\ecommerce\templates\customer\signup.html:29
+msgid "If you've an account?"
+msgstr "لو لديك حساب"
+
+#: .\ecommerce\templates\home_pages\about.html:4
+msgid "About Us"
+msgstr "عننا"
+
+#: .\ecommerce\templates\home_pages\about.html:13
+#: .\ecommerce\templates\home_pages\home.html:161
+msgid "We Provide Best For You"
+msgstr "نحن نوفر الاحسن الك"
+
+#: .\ecommerce\templates\home_pages\about.html:17
+#: .\ecommerce\templates\home_pages\home.html:165
+msgid ""
+"As much as customers want to hear the story of what makes your company "
+"unique, they also want to know how your company will help them. How will "
+"your products make their lives easier? Why should they choose your product "
+"ahead of everything else on the market? In order to effectively speak to "
+"your customers, you also need to know your audience really well. As you "
+"write, it will help to construct a mini customer profile to refer to – one "
+"that goes beyond the basics of age, occupation, and location. Think about "
+"what your products can tell you about your customers. For example, someone "
+"selling upscale cutlery can infer that their customers like to cook. Sharing "
+"a favorite recipe on the About Us page would be a simple way to connect with "
+"that particular demographic."
+msgstr ""
+"بقدر ما يرغب العملاء في سماع قصة ما يجعل شركتك فريدة من نوعها ، فإنهم يريدون "
+"أيضًا معرفة كيف ستساعدهم شركتك. كيف ستجعل منتجاتك حياتهم أسهل؟ لماذا يجب أن "
+"يختاروا منتجك قبل كل شيء آخر في السوق؟ من أجل التحدث إلى عملائك بشكل فعال ، "
+"تحتاج أيضًا إلى معرفة جمهورك جيدًا. أثناء الكتابة ، سيساعدك إنشاء ملف تعريف "
+"عميل صغير للإشارة إليه - ملف يتجاوز أساسيات العمر والوظيفة والموقع. فكر فيما "
+"يمكن أن تخبرك به منتجاتك عن عملائك. على سبيل المثال ، يمكن لأي شخص يبيع "
+"أدوات مائدة راقية أن يستنتج أن عملائه يحبون الطهي. قد تكون مشاركة الوصفة "
+"المفضلة على صفحة طريقة بسيطة للتواصل مع تلك المجموعة السكانية المحددة."
+
+#: .\ecommerce\templates\home_pages\home.html:103 .\templates\footer.html:58
+#: .\templates\nav_system.html:134
+msgid "Products"
+msgstr "المنتجات"
+
+#: .\ecommerce\templates\home_pages\home.html:147
+msgid "View More"
+msgstr "شاهد المزيد"
+
+#: .\ecommerce\templates\home_pages\home.html:168
+msgid "Read More"
+msgstr "اقرأ المزيد"
+
+#: .\ecommerce\templates\home_pages\home.html:187
+#: .\ecommerce\templates\home_pages\why_us.html:12
+msgid "Why Choose Us"
+msgstr "لماذا تختارنا"
+
+#: .\ecommerce\templates\home_pages\home.html:198
+#: .\ecommerce\templates\home_pages\why_us.html:23
+msgid "Fast Delivery"
+msgstr "سرعة التوصيل"
+
+#: .\ecommerce\templates\home_pages\home.html:201
+#: .\ecommerce\templates\home_pages\home.html:216
+#: .\ecommerce\templates\home_pages\home.html:231
+#: .\ecommerce\templates\home_pages\why_us.html:26
+#: .\ecommerce\templates\home_pages\why_us.html:41
+#: .\ecommerce\templates\home_pages\why_us.html:56
+msgid "variations of passages of Lorem Ipsum available"
+msgstr "لدينا سرعة التوصيل ارضاء للعملاء"
+
+#: .\ecommerce\templates\home_pages\home.html:213
+#: .\ecommerce\templates\home_pages\why_us.html:38
+msgid "Free Shiping"
+msgstr "عروض مجانية"
+
+#: .\ecommerce\templates\home_pages\home.html:228
+#: .\ecommerce\templates\home_pages\why_us.html:53
+msgid "Best Quality"
+msgstr "افضل جودة"
+
+#: .\ecommerce\templates\home_pages\why_us.html:5 .\templates\footer.html:70
+#: .\templates\nav_system.html:140
+msgid "Why Us"
+msgstr "لماذا نحن"
+
+#: .\ecommerce\templates\products\allproducts.html:9
+msgid "All products"
+msgstr "جميع المنتجات"
+
+#: .\ecommerce\templates\products\productdetail.html:3
+msgid "Product Detail"
+msgstr "المنتجات"
+
+#: .\ecommerce\templates\products\productdetail.html:28
+msgid "Price :"
+msgstr "السعر"
+
+#: .\ecommerce\templates\products\search.html:3
+msgid "search Product"
+msgstr " ابحث المنتجات"
+
+#: .\ecommerce\templates\products\search.html:8
+msgid "Search Result For"
+msgstr "نتائج البحث"
+
+#: .\ecommerce\templates\products\search.html:27
+msgid "Return Policy : "
+msgstr "سياسة الاسترجاع"
+
+#: .\templates\footer.html:18
+msgid "Hafr Elbaten"
+msgstr "حفر الباطن"
+
+#: .\templates\footer.html:33
+msgid "Some Information"
+msgstr "بعض المعلومات"
+
+#: .\templates\footer.html:36
+msgid ""
+"Eligendi sunt, provident, debitis nemo, facilis cupiditate velit libero "
+"dolorum aperiam enim nulla iste maxime corrupti ad illo libero minus."
+msgstr "نحن شركة تقوم بتنفيذ جميع المهام البرمجية و التسويقية"
+
+#: .\templates\footer.html:43
+msgid "Useful Link"
+msgstr "روابط مفيدة"
+
+#: .\templates\footer.html:52 .\templates\nav_system.html:131
+msgid "about us"
+msgstr "عننا"
+
+#: .\templates\footer.html:103
+msgid " All Rights Reserved By"
+msgstr "جميع الحقوق محفوظة بواسطة "
+
+#: .\templates\nav_system.html:64
+msgid "Search hear.."
+msgstr "..ابحث هنا"
+
+#: .\templates\nav_system.html:81
+msgid "Register"
+msgstr "مستخدم جديد"
+
+#: .\templates\nav_system.html:137
+msgid "Categories"
+msgstr "الاقسام"
+
+#, fuzzy
+#~| msgid "About Us"
+#~ msgid "About"
+#~ msgstr "عننا"

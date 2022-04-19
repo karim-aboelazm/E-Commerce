@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "All Products" %}{% endblock title %}
+{% block content %}
+    <section class="product_section layout_padding" id="products">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>
+              {% trans "All products" %}
+            </h2>
+          </div>
+          <div class="row">
+            {% for product in list_products %}
+                <div class="col-sm-6 col-lg-4">
+                  <div class="box">
+                    <div class="img-box">
+                        <img src="{{product.image.url}}" alt="">
+                        <a class="add_cart_btn" href="{% url 'ecom:add_to_cart' product.id %}">
+                            <span>{% trans "Add To Cart" %}</span>
+                        </a>    
+                    </div>
+                    <div class="detail-box">
+                      <h5>
+                          {% if LANGUAGE_CODE == 'ar' %}
+                            <a href="{% url 'ecom:product_detail' product.slug %}">{{product.title_ar}}</a>
+                          {% else %}
+                            <a href="{% url 'ecom:product_detail' product.slug %}">{{product.title}}</a>
+                          {% endif %}
+                      </h5>
+                      <div class="product_info">
+                        <h5>
+                          <span>$</span> {{product.get_display_price}}
+                        </h5>
+                        <div class="star_container">
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+          <div class="row">
+            <div class="col-md-12 mx-auto" style="margin: 0 auto;">
+                <nav aria-label="Page navigation example" >
+                    <ul class="pagination justify-content-center" >
+                    {% if list_products.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ list_products.previous_page_number }}" aria-label="Previous" style="border-radius: 0;">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                    {%else%}
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous" tabindex="-1" aria-disabled="true" style="border-radius: 0;" >
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      {% endif %}
+                      {% for i in list_products.paginator.page_range %}
+                      {% if i == list_products.number  %}
+                      <li class="page-item active"><a class="page-link" style="border-radius: 0;" href="?page={{i}}">{{i}}</a></li>
+                      {%else%}
+                      <li class="page-item"><a class="page-link" style="border-radius: 0;" href="?page={{i}}">{{i}}</a></li>
+                      {% endif %}
+                        
+                      {% endfor %}
+                      {% if list_products.has_next %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ list_products.next_page_number }}" aria-label="Next" style="border-radius: 0;">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                      {%else%}
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next" tabindex="-1" aria-disabled="true" style="border-radius: 0;">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                      {%endif%}
+                    </ul>
+                </nav>
+            </div>
+          </div>
+        </div>
+    </section> 
+{% endblock content %}

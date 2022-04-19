@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Add To Cart" %}{% endblock title %}
+
+{% block content %}
+    <h2 class="text-center pt-5">{% trans "Congratulations !" %}</h2>
+    <h2 class="text-center">{% trans "Product is added to the cart successfully !" %}</h2>
+    <center>
+      <a href="{% url 'ecom:my_cart' %}" class="btn btn-primary m-5" 
+      style="background-color:rgb(21, 21, 29);color:white;padding:10px;">{% trans "Check Your Cart" %}</a>
+    </center>
+{% endblock content %}

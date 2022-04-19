@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+  {% trans "My Cart" %}
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="mt-4 mb-4">{% trans "Items in my cart" %}</h2>
+        <table class="table text.center table-dark table-hover" >
+          <thead>
+            <tr>
+              <th>{% trans "SN" %}</th>
+              <th>{% trans "Product" %}</th>
+              <th>{% trans "Price" %}</th>
+              <th>{% trans "Quantity" %}</th>
+              <th>{% trans "Subtotal" %}</th>
+              <th>{% trans "Action" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cp in cart.cartproduct_set.all  %}
+              <tr>
+                <td>{{forloop.counter}}</td> 
+                <td>{{cp.product.title}}</td>
+                <td>$ {{cp.rate}}</td>
+                <td>{{cp.quantity}}</td>
+                <td>{{cp.subtotal}}</td>
+                <td>
+                  <a href="{% url 'ecom:manage_cart' cp.id%}?action=acr" type="button" class="btn btn-primary"> + </a>
+                  <a href="{% url 'ecom:manage_cart' cp.id%}?action=dcr" type="button" class="btn btn-warning"> - </a>
+                  <a href="{% url 'ecom:manage_cart' cp.id%}?action=rcr" type="button" class="btn btn-danger"> x </a>
+                </td>
+              </tr>
+            {% endfor %}
+            <tr>
+              <th colspan="4" class="text-right pt-3">{% trans "Total" %} : </th>
+              <th class="pt-3">$ {{cart.total}}</th>
+              {% if cart.cartproduct_set.all %}
+              <th><a href="{% url 'ecom:empty_cart' %}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> {% trans "Empty Cart" %}</a></th>
+              {% endif %}
+            </tr>
+            {% if cart.cartproduct_set.all %}
+            <tr>
+              <th colspan="8" class="text-center"><a class="btn btn-primary" href="{% url 'ecom:check_out'%}"><i class="fas fa-money-check-alt"></i> {% trans "Check Out" %}</a>
+              </th>
+            </tr>
+            {% endif %}
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <img src="{% static '—Pngtree—hand painted blue shopping cart_5254610.png' %}" 
+        style="width: 100%;" class="text-right" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+{% endblock content %}

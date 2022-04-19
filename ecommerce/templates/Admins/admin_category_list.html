@@ -1,0 +1,36 @@
+{% extends "Admins/adminbase.html" %}
+{% load i18n %}
+{% block title %}
+  {% trans "All Categories" %}
+{% endblock title %}
+{% block content %}
+    <div class="containe">
+        <div class="col-md-12">
+            <h3 class="text-center mt-5 mb-3">{% trans "All Categories List" %}</h3>
+            <a class="btn btn-info mb-4" href="{% url 'ecom:admin_add_category' %}"><i class="fas fa-plus"></i> {% trans "Add New Category" %}</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>{% trans "SN" %}</th>
+                        <th>{% trans "Category Title" %}</th>
+                        <th>{% trans "Number of products" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for category in all_categories %}
+                        <tr>
+                            <td style="font-size:18px;">{{forloop.counter}}</td>
+                            {% if LANGUAGE_CODE == "ar" %}
+                            <td style="font-size:18px;">{{category.title_ar}}</td>
+                            {% else %}
+                            <td style="font-size:18px;">{{category.title}}</td>
+                            {% endif %}
+                            <td style="font-size:18px;">{{category.products_set.all.count}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock content %}

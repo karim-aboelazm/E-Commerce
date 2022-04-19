@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "About Us" %}{% endblock title %}
+{% block content %}
+<section class="about_section">
+    <div class="container-fluid  ">
+      <div class="row">
+        <div class="col-md-5 ml-auto">
+          <div class="detail-box pr-md-3">
+            <div class="heading_container">
+              <h2>
+                {% trans "We Provide Best For You" %}
+              </h2>
+            </div>
+            <p style="text-align: justify">
+              {% trans "As much as customers want to hear the story of what makes your company unique, they also want to know how your company will help them. How will your products make their lives easier? Why should they choose your product ahead of everything else on the market? In order to effectively speak to your customers, you also need to know your audience really well. As you write, it will help to construct a mini customer profile to refer to – one that goes beyond the basics of age, occupation, and location. Think about what your products can tell you about your customers. For example, someone selling upscale cutlery can infer that their customers like to cook. Sharing a favorite recipe on the About Us page would be a simple way to connect with that particular demographic." %}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

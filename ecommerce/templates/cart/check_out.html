@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+{% load i18n %}
+{% block title %}{% trans "Check Out" %}{% endblock title %}
+{% block content %}
+  <div class="container">
+    <h1 class="mt-5 mb-5">{% trans "Items in my cart" %}</h1>
+      <a  class="btn btn-primary mb-4" href="{% url 'ecom:my_cart' %}"><i class="far fa-edit"></i> {% trans "Update Cart" %}</a>
+    <div class="row">
+      <div class="col-md-8">
+        <table class="table text.center table-dark table-hover ">
+          <thead class="table-dark">
+            <tr>
+              <th  style="color: white;">{% trans "SN" %}</th>
+              <th  style="color: white;">{% trans "Product" %}</th>
+              <th  style="color: white;">{% trans "Price" %}</th>
+              <th  style="color: white;">{% trans "Quantity" %}</th>
+              <th  style="color: white;">{% trans "Subtotal" %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cp in cart.cartproduct_set.all  %}
+              <tr>
+                <td>{{forloop.counter}}</td> 
+                <td>{{cp.product.title}}</td>
+                <td>$ {{cp.rate}}</td>
+                <td>{{cp.quantity}}</td>
+                <td>{{cp.subtotal}}</td>
+              </tr>
+            {% endfor %}
+            <tr>
+              <th colspan="4" class="text-right pt-3">{% trans "Total" %} : </th>
+              <th class="pt-3">$ {{cart.total}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <!-- Include the PayPal JavaScript SDK -->
+          <script src="https://www.paypal.com/sdk/js?client-id=Aar5xkJczfnPNhhRzS70UGgNoy3FqMWZ02AoqAJ9aXxyl1Yut1N1GnXb68VKwTlHKAXcKA7k7uAWTAUc&currency=USD"></script>
+
+          <div id="paypal-button-container"></div>
+
+          <script>
+              // Render the PayPal button into #paypal-button-container
+              paypal.Buttons({
+
+                  // Set up the transaction
+                  createOrder: function(data, actions) {
+                      return actions.order.create({
+                          purchase_units: [{
+                              amount: {
+                                  value: '{{cart.total}}'
+                              }
+                          }]
+                      });
+                  },
+
+                  // Finalize the transaction
+                  onApprove: function(data, actions) {
+                      return actions.order.capture().then(function(orderData) {
+                          // Successful capture! For demo purposes:
+                          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                          var transaction = orderData.purchase_units[0].payments.captures[0];
+                          alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+                      });
+                  }
+
+
+              }).render('#paypal-button-container');
+          </script>
+
+      </div>
+    </div>
+  </div>
+{% endblock content %}

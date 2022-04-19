@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+  {% trans "Edit Profile" %}
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="row p-3">
+            <h1 class="text-center pt-5">{% trans "Edit Profile" %}</h1><hr>
+            <div class="col-md-8 p-3 ">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <button class="btn btn-dark btn-lg btn-block col-12" type="submit">{% trans "Save" %}</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'edit.png' %}" alt="" style="width:100%">
+            </div>
+        </div>
+    </div>
+<style>
+    .text-muted
+    {
+        display:none;
+    }
+</style>
+{% endblock content %}

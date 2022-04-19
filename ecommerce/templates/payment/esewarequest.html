@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+  Esewa Payment
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="col-md-8 mt-5 mb-5 mx-auto">
+        <h3 class="text-center mt-3 mb-5" >You will redirected to the esewa website to pay.. </h3>
+        <h3 class="text-center mt-3 mb-5">Your Order Amount is Rs. {{order.total}}</h3>
+        <form class="form" style="display: none;" action="https://uat.esewa.com.np/epay/main" method="POST" id="myform">
+            <input class="form-control mb-3" value="{{order.total}}" name="tAmt" type="hidden">
+            <input class="form-control mb-3" value="{{order.total}}" name="amt" type="hidden">
+            <input class="form-control mb-3" value="0" name="txAmt" type="hidden">
+            <input class="form-control mb-3" value="0" name="psc" type="hidden">
+            <input class="form-control mb-3" value="0" name="pdc" type="hidden">
+            <input class="form-control mb-3" value="EPAYTEST" name="scd" type="hidden">
+            <input class="form-control mb-3" value="Order_{{order.id}}" name="pid" type="hidden">
+            <input class="form-control mb-3" value="http://127.0.0.1:8000/esewa-verify/" type="hidden" name="su">
+            <input class="form-control mb-3" value="{{request.build_absolute_uri}}" type="hidden" name="fu">
+            <input class="col-12 btn btn-success btn-lg mx-auto" value="Pay with Esewa" type="submit">
+        </form>
+
+        <!-- script for payment form -->
+        <script>
+            setTimeout(function(){
+                document.getElementById("myform").submit()
+            },500)
+            
+        </script>
+    </div>
+</div>
+   
+{% endblock content %}

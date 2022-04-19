@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "All Categories" %}{% endblock title %}
+{% block content %}
+
+<section class="product_section layout_padding" id="products">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          {% trans "All Categories" %}
+        </h2>
+      </div>
+      {% for cat in all_categories %}
+        {% if LANGUAGE_CODE == 'ar' %}
+        <h2 style="font-size: 40px; font-weight: bolder;border-bottom:2px solid #000000;padding-bottom: 3px;"><i class="fas fa-chevron-circle-right"></i> {{cat.title_ar}}</h2>
+        {% else %}
+        <h2 style="font-size: 40px; font-weight: bolder;border-bottom:2px solid #000000;padding-bottom: 3px;"><i class="fas fa-chevron-circle-right"></i> {{cat.title}}</h2>
+        {% endif %}
+        <div class="row">
+            {% for product in cat.products_set.all %}
+                <div class="col-sm-6 col-lg-4">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="{{product.image.url}}" alt="">
+                        <a class="add_cart_btn" href="{% url 'ecom:add_to_cart' product.id %}">
+                            <span>{% trans "Add To Cart" %}</span>
+                        </a>    
+                    </div>
+                    <div class="detail-box">
+                    <h5>
+                      {% if LANGUAGE_CODE == 'ar' %}
+                        <a href="{% url 'ecom:product_detail' product.slug %}">{{product.title_ar}}</a>
+                      {% else %}
+                      <a href="{% url 'ecom:product_detail' product.slug %}">{{product.title}}</a>
+                      {% endif %}
+                    </h5>
+                    <div class="product_info">
+                        <h5>
+                        <span>$</span> {{product.get_display_price}}
+                        </h5>
+                        <div class="star_container">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+        <br><br>
+      {%endfor%}
+      
+     
+    </div>
+</section>
+
+
+{% endblock content %}

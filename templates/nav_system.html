@@ -1,0 +1,174 @@
+{% load static %}
+{% load i18n %}
+<style>
+  .navbar-toggler.collapsed .close-icon {
+    display: none;
+  
+ }
+
+ .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    display: inline;
+  }
+ 
+  </style>
+
+  
+ <!-- header section strats -->
+  <header class="header_section">
+    <div class="header_top">
+      <div class="container-fluid">
+        <div class="top_nav_container">
+          <div class="contact_nav">
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col ">
+                  <select name="language" class="selectpicker btn btn-primary btn-sm active" data-width="fit">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                      <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        <span class="flag-icon flag-icon-us" style="color:red;">{{ language.code }}</span>
+                      </option>
+                    {% endfor %}
+                </select>
+                </div>
+                <div class="col mr-5">
+                  <input class="btn btn-primary btn-sm" type="submit" value="Go">
+                </div>
+              </div>
+          </form>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span style="margin-right: 20px;">
+                Call : +20 127 878 9685
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span style="margin-right: 20px;">
+                Email : doretelfaleh@gmail.com
+              </span>
+            </a>
+            
+          <script>
+            $(function () {
+              $(".selectpicker").selectpicker();
+              
+            });
+
+          </script>
+          </div>
+          <form class="search_form" method="GET" action="{% url 'ecom:search' %}">
+            <input type="text" name="keyword" class="form-control" placeholder={% trans "Search hear.." %}>
+            <button class="" type="submit"><i class="fa fa-search" ></i></button>
+          </form>
+
+          <div class="user_option_box">
+            {% if request.user.customer%}
+            <a href="{% url 'ecom:customer_profile'%}" class="account-link">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>
+                  {{request.user.username}}
+              </span>
+            </a>
+            {%else%}
+
+              <a href="{% url 'ecom:customer_register'%}" class="account-link">
+                <i class="fas fa-user-plus"></i>
+              <span>
+                  {% trans "Register" %}
+              </span>
+              </a>
+              <a href="{% url 'ecom:customer_login'%}" class="account-link">
+                 <i class="fas fa-sign-in-alt"></i>
+                  <span>
+                      {% trans "Login" %}
+                  </span>
+              </a>
+            {%endif%}
+            
+            {% if user.is_authenticated and request.user.customer%}
+              <a href="{% url 'ecom:my_cart' %}" class="cart-link">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span>
+                  Cart
+                </span>
+              </a>
+              <a href="{% url 'ecom:customer_logout' %}"><i class="fas fa-power-off"></i></a>
+            {%endif%}
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="header_bottom">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="{% url 'ecom:home' %}">
+            <span style="font-size: 40px;font-family: 'Aubrey', cursive;">
+              <i class="fa fa-shopping-cart" style="font-size:50px;color: goldenrod;"></i>
+               {% trans "Doret Elfaleh" %}
+            </span>
+          </a>
+          <button class="navbar-toggler navbar-toggler-right collapsed border-0" id="ChangeToggle"
+            type="button" data-toggle="collapse" 
+            aria-expanded="false"
+            data-target="#navbar-list" 
+            aria-controls="navbarSupportedContent" 
+            aria-label="Toggle navigation" onclick="displayMenu(event)"> 
+            <i class="fas fa-bars" style="color: white;border:none;"></i>
+            </span>
+          </button>
+
+          <div class="collapse navbar-collapse "  id="navbar-list">
+              <ul class="nav navbar-nav ml-auto ">
+                <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'ecom:home' %}">{% trans "Home" %}</a>
+                </li>
+                <li class="nav-item {% if request.path == '/about/' %}active{% endif %}">
+                  <a class="nav-link"  href="{% url 'ecom:about_us' %}">{% trans "about us" %}</a>
+                </li>
+                <li class="nav-item {% if request.path == '/all-products/' %}active{% endif %}">
+                  <a class="nav-link"  href="{% url 'ecom:all_products' %}">{% trans "Products" %}</a>
+                </li>
+                <li class="nav-item {% if request.path == '/all-categories/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'ecom:all_categories' %}">{% trans "Categories" %}</a>
+                </li>  
+                <li class="nav-item {% if request.path == '/why-us/' %}active{% endif %}">
+                  <a class="nav-link" href="{% url 'ecom:why_us' %}">{% trans "Why Us" %}</a>
+                </li>
+              </ul>
+            
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <script type="text/javascript">
+    function displayMenu(event) {
+     
+      if (document.getElementById("navbar-list").classList.contains("show")) {
+          document.getElementById("navbar-list").classList.remove("show")
+          
+      }
+      else {
+          document.getElementById("navbar-list").classList.add("show")  
+      }
+
+      $('#ChangeToggle').find("i").toggleClass("icon-chevron-up");
+      
+    }
+  
+  </script>
+  
+  <script src=
+  "https://code.jquery.com/jquery-3.2.1.slim.min.js">
+    </script>
+      <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+    </script>
+
+  
+  

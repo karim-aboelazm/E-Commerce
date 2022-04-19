@@ -1,0 +1,240 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Home" %}{% endblock title %}
+{% block content %}
+   
+     <!-- slider section -->
+     <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome to our shop
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optio.
+                    </p>
+                    <a href="">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static '' %}images/slider-img.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome to our shop
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optio.
+                    </p>
+                    <a href="">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static '' %}images/slider-img.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Welcome to our shop
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optio.
+                    </p>
+                    <a href="">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static '' %}images/slider-img.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn_box">
+          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  
+    <section class="product_section layout_padding" id="products">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>
+            {% trans "Products" %}
+          </h2>
+        </div>
+        <div class="row">
+          {% for product in some_products|slice:"0:9"  %}
+              <div class="col-sm-6 col-lg-4">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{product.image.url}}" alt="">
+                    <a href="{% url 'ecom:add_to_cart' product.id %}" class="add_cart_btn">
+                      <span>
+                        {% trans "Add To Cart" %}
+                      </span>
+                    </a>
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      {% if LANGUAGE_CODE == 'ar' %}
+                      <a href="{%url 'ecom:product_detail' product.slug %}">{{product.title_ar}}</a>
+                      {% else %}
+                      <a href="{%url 'ecom:product_detail' product.slug %}">{{product.title}}</a>
+                      {% endif %}
+                      
+                    </h5>
+                    <div class="product_info">
+                      <h5>
+                        <span>$</span> {{product.get_display_price}}
+                      </h5>
+                      <div class="star_container">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          {% endfor %}
+          
+        </div>
+        <div class="btn_box">
+          <a href="{% url 'ecom:all_products' %}" class="view_more-link">
+            {% trans "View More" %}
+          </a>
+        </div>
+      </div>
+    </section>
+  
+    
+    <section class="about_section">
+      <div class="container-fluid  ">
+        <div class="row">
+          <div class="col-md-5 ml-auto">
+            <div class="detail-box pr-md-3">
+              <div class="heading_container">
+                <h2>
+                  {% trans "We Provide Best For You" %}
+                </h2>
+              </div>
+              <p style="text-align: justify">
+                {% trans "As much as customers want to hear the story of what makes your company unique, they also want to know how your company will help them. How will your products make their lives easier? Why should they choose your product ahead of everything else on the market? In order to effectively speak to your customers, you also need to know your audience really well. As you write, it will help to construct a mini customer profile to refer to – one that goes beyond the basics of age, occupation, and location. Think about what your products can tell you about your customers. For example, someone selling upscale cutlery can infer that their customers like to cook. Sharing a favorite recipe on the About Us page would be a simple way to connect with that particular demographic." %}
+              </p>
+              <a href="{% url 'ecom:about_us' %}">
+                {% trans "Read More" %}
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 px-0">
+            <div class="img-box">
+              <img src="{% static 'images/about-img.jpg' %}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  
+    
+    <section class="why_us_section layout_padding">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>
+            {% trans "Why Choose Us" %}
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/w1.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  {% trans "Fast Delivery" %}
+                </h5>
+                <p>
+                  {% trans "variations of passages of Lorem Ipsum available" %}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/w2.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  {% trans "Free Shiping" %}
+                </h5>
+                <p>
+                  {% trans "variations of passages of Lorem Ipsum available" %}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/w3.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  {% trans "Best Quality" %}
+                </h5>
+                <p>
+                  {% trans "variations of passages of Lorem Ipsum available" %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+{% endblock content %}

@@ -1,0 +1,107 @@
+{% load static %}
+{% load i18n %}
+<section class="info_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              <a class="navbar-brand" href="{% url 'ecom:home' %}">
+                <span style="font-size: 30px;font-family: 'Aubrey', cursive;">
+                  <i class="fa fa-shopping-cart" style="font-size:30px;color: goldenrod;"></i>
+                  {% trans "Doret Elfaleh" %}
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              {% trans "Hafr Elbaten" %}
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +20 123 456 7880
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              doretelfaleh@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              {% trans "Some Information" %}
+            </h5>
+            <p>
+              {% trans "Eligendi sunt, provident, debitis nemo, facilis cupiditate velit libero dolorum aperiam enim nulla iste maxime corrupti ad illo libero minus." %}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              {% trans "Useful Link" %}
+            </h5>
+            <ul class="navbar-nav ">
+              <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+                <a class="nav-link" href="{% url 'ecom:home' %}">{% trans "Home" %}</a>
+              </li>
+
+              <li class="nav-item {% if request.path == '/about/' %}active{% endif %}">
+                <a href="{% url 'ecom:about_us' %}">
+                  {% trans "about us" %}
+                </a>
+              </li>
+
+              <li class="nav-item {% if request.path == '/all-products/' %}active{% endif %}">
+                <a href="{% url 'ecom:all_products' %}">
+                  {% trans "Products" %}
+                </a>
+              </li>
+
+              <li class="nav-item {% if request.path == '/all-categories/' %}active{% endif %}">
+                <a href="{% url 'ecom:all_categories' %}">
+                 {% trans "All Categories" %}
+                </a>
+              </li>
+
+              <li class="nav-item {% if request.path == '/why-us/' %}active{% endif %}">
+                <a href="{% url 'ecom:why_us' %}">
+                  {% trans "Why Us" %}
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <a href="/"><img src="{% static 'cart.png' %}" alt="" style="width: 200px;"></a>
+            <div class="social_box">
+              <a href="https://www.facebook.com/profile.php?id=100080424734688">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="https://twitter.com/DoretElfaleh">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/doretelfaleh/">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="https://api.whatsapp.com/send?phone=+201278789685">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<footer class="footer_section">
+  <div class="container">
+    <p>
+      &copy; <span id="displayYear"></span> {% trans " All Rights Reserved By" %}
+      <a href="/"> {% trans "Doret Elfaleh" %} </a>
+    </p>
+  </div>
+</footer>

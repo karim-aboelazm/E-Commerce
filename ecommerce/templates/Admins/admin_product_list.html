@@ -1,0 +1,42 @@
+{% extends "Admins/adminbase.html" %}
+{% load i18n %}
+{% block title %}
+  {% trans "All Products" %}
+{% endblock title %}
+{% block content %}
+    <div class="containe">
+        <div class="col-md-12">
+            <h3 class="text-center mt-3 mb-3">{% trans "All Products List" %}</h3>
+            <a class="btn btn-info mb-4" href="{% url 'ecom:admin_add_product' %}"><i class="fas fa-plus"></i> {% trans "Add New Product" %}</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>{% trans "SN" %}</th>
+                        <th>{% trans "Product Title" %}</th>
+                        <th>{% trans "Image" %}</th>
+                        <th>{% trans "Price" %}</th>
+                        <th>{% trans "Edit Product" %}</th>
+                        <th>{% trans "Delete Product" %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in all_products %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            {% if LANGUAGE_CODE == "ar" %}
+                            <td>{{product.title_ar}}</td>
+                            {% else %}
+                            <td>{{product.title}}</td>
+                            {% endif %}
+                            <td><img src="{{product.image.url}}" style="height: 60px;" alt="" srcset=""></td>
+                            <td>$ {{product.get_display_price}}</td>
+                            <td><a class="btn btn-success btn-lg" href="{% url 'ecom:admin_edit_product' product.id %}">Edit</a></td>
+                            <td><a class="btn btn-danger btn-lg" href="{% url 'ecom:admin_delete_product' product.id %}" style="text-decoration: none;color:currentColor;cursor:pointer;"> <i style="color:currentColor;" class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock content %}

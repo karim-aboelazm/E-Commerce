@@ -1,0 +1,61 @@
+{% extends "Admins/adminbase.html" %}
+{% load humanize %}
+{% load i18n %}
+{% block title %}
+  {% trans "Order Details" %}
+{% endblock title %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto mb-5">
+            <h2 class="pt-5">{% trans "Order Detail" %}</h2><hr>
+                <p><span class="font-weight-bold">{% trans "Order ID" %} : </span><span> #ORDER_{{order_object.id}}</span></p>
+                <p><span class="font-weight-bold">{% trans "Order Status" %} : </span><span>{{order_object.order_status}}</span></p>
+                <p><span class="font-weight-bold">{% trans "Order On" %} : </span><span>{{order_object.created_at}} ( {{order_object.created_at|timesince}} ago )</span></p>
+                <p><span class="font-weight-bold">{% trans "Customer Info" %} : </span><span>By : {{order_object.ordered_by}} , {{order_object.phone_num}}</span></p>
+                <p><span class="font-weight-bold">{% trans "Shipping Address" %} : </span><span>By : {{order_object.shopping_address}}, ({{order_object.email}}) </span></p>
+                <p><span class="font-weight-bold">{% trans "Payment Information" %} : </span><span>Using {{order_object.payment_method}}, ({% if order_object.payment_completed %} Payment Completed {%else%} Not Paid {% endif %}) </span></p>               
+                <hr>
+                <h2>Order Items</h2>
+                <table class="table text.center table-dark table-hover" >
+                    <thead>
+                      <tr>
+                        <th>{% trans "SN" %}</th>
+                        <th>{% trans "Items" %}</th>
+                        <th>{% trans "Price" %}</th>
+                        <th>{% trans "Quantity" %}</th>
+                        <th>{% trans "Subtotal" %}</th>
+                      </tr>
+                    </thead>
+                     <tbody>
+                      {% for order in order_object.cart.cartproduct_set.all  %}
+                        <tr>
+                          <td>{{forloop.counter}}</td> 
+                          <td><a target="_blank" href="{% url 'ecom:product_detail' order.product.slug%}">{{order.product.title}} , ({{order.product.id}})</a></td>
+                          <td>$ {{order.rate}}</td>
+                          <td>{{order.quantity}}</td>
+                          <td>$ {{order.subtotal}}</td>
+                        </tr>
+                      {% endfor %}
+                        <tr>
+                            <th colspan="4" class="text-right">{% trans "Total" %} : </th>
+                            <th>$ {{order_object.total|intcomma}}</th>
+                        </tr>
+                    </tbody> 
+                  </table>
+                  <form class='' action="{% url 'ecom:admin_order_status_change' order_object.id %}" method="post">
+                    {% csrf_token %}
+                    <select class="col form-select" aria-label="Default select example" name="status">
+                      {% for i,j in all_status %}
+                        <option value="{{i}}" {% if i == order_object.order_status %}
+                          selected
+                        {% endif %}>{{j}}</option>
+                      {% endfor %}
+                    </select>
+                    <button class="col btn btn-primary mt-5" type="submit" >{% trans "Change" %}</button>
+                  </form>
+        </div>
+        </div>
+    </div>  
+  </div>
+{% endblock content %}

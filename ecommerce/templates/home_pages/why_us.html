@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+  {% trans "Why Us" %}
+{% endblock title %}
+{% block content %}
+<section class="why_us_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          {% trans "Why Choose Us" %}
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/w1.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                {% trans "Fast Delivery" %}
+              </h5>
+              <p>
+                {% trans "variations of passages of Lorem Ipsum available" %}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/w2.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                {% trans "Free Shiping" %}
+              </h5>
+              <p>
+                {% trans "variations of passages of Lorem Ipsum available" %}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/w3.png' %}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                {% trans "Best Quality" %}
+              </h5>
+              <p>
+                {% trans "variations of passages of Lorem Ipsum available" %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

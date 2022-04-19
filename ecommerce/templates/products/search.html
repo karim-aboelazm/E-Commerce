@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "search Product" %}{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="mt-5 text-center">{% trans "Search Result For" %} <span class="text-info">" {{request.GET.keyword}} "</span></h2>
+                <hr>
+                {% for result in results %}
+                  <div class="row">
+                    <div class="col-md-12 card mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <a href="{{result.image.url}}" target="_blank"><img src="{{result.image.url}}" class="img-fluid rounded-start" alt="product_image" style="width: 100%;"></a>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              {% if LANGUAGE_CODE == 'ar' %}
+                              <h5 class="card-title"><a style="text-decoration: none;" href="{% url 'ecom:product_detail' result.slug %}">{{result.title_ar}}</a></h5>
+                              <p class="card-text">{{result.description_ar|truncatewords:50}}</p>
+                              {% else %}
+                              <h5 class="card-title"><a style="text-decoration: none;" href="{% url 'ecom:product_detail' result.slug %}">{{result.title}}</a></h5>
+                              <p class="card-text">{{result.description|truncatewords:50}}</p>
+                              {% endif %}
+                              
+                              <p class="card-text">{% trans "Return Policy : " %} <small class="text-muted">{{result.return_policy}}</small></p>
+                              <a href="{% url 'ecom:add_to_cart' result.id %}" class="btn btn-info" style="padding: 10px;font-weight:600;background:rgb(14, 14, 24); color:white;">
+                                {% trans "Add To Cart" %}
+                            </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                  
+                  <br>
+                 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

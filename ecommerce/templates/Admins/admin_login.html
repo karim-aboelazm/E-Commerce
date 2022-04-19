@@ -1,0 +1,62 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap5 %}
+{% block auth_content %}
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>{% trans "Your account doesn't have access to this page. To proceed,
+      please login with an account that has access." %}</p>
+    {% else %}
+      <p>{% trans "Please login to see this page." %}</p>
+    {% endif %}
+  {% endif %}
+  <section class="vh-100 " style="background-color: #080808;">
+    <div class="container py-3 ">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col col-xl-10">
+          <div class="card mt-5" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img
+                  src="{% static 'images/Big_phone_with_cart.jpg'%}"
+                  alt="login form"
+                  class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%;"
+                />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-3 text-black">
+                  <form method="post" action="" class="">
+                      {% csrf_token %}
+                      <div class="d-flex align-items-center mb-3 pb-1">
+                        <img src="https://img.icons8.com/ios-glyphs/60/000000/fast-cart.png"/>
+                        <span class="h1 fw-bold mb-0">{% trans "Doret Elfaleh Market" %}</span>
+                      </div>
+
+                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">{% trans "Admin Login" %}</h5>
+
+                      {% bootstrap_form form %}
+                      {% if form.errors %}
+                        <p style="color:red">{% trans "Your username and password didn't match. Please try again." %}</p>
+                      {% endif %}  
+                        <div class="pt-1 mb-4">
+                             <button class="btn btn-dark btn-lg btn-block" type="submit">{% trans "Login As Admin" %}</button>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Login Style  -->
+<style>
+  
+  a{
+    text-decoration:none;
+  }
+</style>
+
+{% endblock auth_content %}

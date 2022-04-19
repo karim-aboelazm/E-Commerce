@@ -1,0 +1,67 @@
+{% extends "base_generic.html" %}
+{% load bootstrap5 %}
+{% load i18n %}
+{% block auth_content %}
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>{% trans "Your account doesn't have access to this page. To proceed,
+        please login with an account that has access." %}</p>
+    {% else %}
+      <p>{% trans "Please login to see this page." %}</p>
+    {% endif %}
+  {% endif %}
+  <section class="vh-100 pt-4 " style="background-color: #0c0c0c;">
+    <div class="container py-3 ">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img
+                  src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/img1.jpg"
+                  alt="login form"
+                  class="img-fluid" style="border-radius: 1rem 0 0 1rem;"
+                />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-3 text-black">
+                  <form method="post" action="" class="">
+                      {% csrf_token %}
+                      <div class="d-flex align-items-center mb-3 pb-1">
+                        <img src="https://img.icons8.com/ios-glyphs/60/000000/fast-cart.png"/>
+                        <span class="h1 fw-bold mb-0">{% trans "Doret Elfaleh Market" %}</span>
+                      </div>
+
+                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">{% trans "Sign into your account" %}</h5>
+
+                      {% bootstrap_form form %}
+                      {% if form.errors %}
+                        <p style="color:red">{% trans "Your username and password didn't match. Please try again." %}</p>
+                      {% endif %}  
+                        <div class="pt-1 mb-4">
+                             <button class="btn btn-dark btn-lg btn-block" type="submit">{% trans "Login" %}</button>
+                        </div>
+                        
+                        <!-- <input type="hidden" name="next" value="{{ next }}" /> -->
+                        <p class="pb-lg-2" style="color: #393f81;">{% trans "Forgot Password ?  " %}<a href="{% url 'ecom:forgot_password' %}" style="color: #393f81;">{% trans "Reset Now" %}</a></p>
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">{% trans "Don't have an account?" %}<a href="{% url 'ecom:customer_register'%} " style="color: #393f81;"> {% trans "Register here" %}</a></p>
+                        <a href="#!" class="small text-muted">{% trans "Terms of use." %}</a>
+                        <a href="#!" class="small text-muted">{% trans "Privacy policy" %}</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Login Style  -->
+<style>
+  
+  a{
+    text-decoration:none;
+  }
+</style>
+
+{% endblock auth_content %}
